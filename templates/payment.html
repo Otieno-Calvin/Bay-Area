@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <form method="POST" action="{{ url_for('submit_location') }}">
+        <h2>Payment Details</h2>
+
+        <p><strong>Delivery Details:</strong></p>
+        <p><strong>From:</strong> {{ order_info['delivery_from'] }}</p>
+        <p><strong>To:</strong> {{ order_info['delivery_to'] }}</p>
+        <p><strong>Distance:</strong> {{ order_info['distance'] }} km</p>
+
+        <p><strong>Total Cost:</strong> Ksh {{ order_info['total_cost'] }}</p>
+
+        <label for="transaction_code">Transaction Code:</label>
+        <input type="text" name="transaction_code" placeholder="Enter transaction code" required>
+
+        <br>
+
+         <input type="submit" value="Submit Payment">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            text-align: center;
+            margin-top: 90px;
+        }
+
+        form {
+            display: inline-block;
+            padding: 30px; /* Increased padding for better spacing */
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 12px; /* Increased margin for better spacing */
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <form method="POST" action="{{ url_for('submit_personal_info') }}">
+        <h2>Personal Information</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <br>
+        <label for="id_no">ID Number:</label>
+        <input type="text" id="id_no" name="id_no" placeholder="Enter your ID number" required>
+        <br>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        <br>
+        <label>Goods Type:</label>
+        <input type="radio" id="fragile" name="goods" value="fragile">
+        <label for="fragile">Fragile Goods</label>
+        <input type="radio" id="large" name="goods" value="large">
+        <label for="large">Large Goods</label>
+        <input type="radio" id="small" name="goods" value="small">
+        <label for="small">Small Goods</label>
+        <input type="radio" id="live" name="goods" value="live">
+        <label for="live">Live Goods</label>
+        <br>
+        <label><strong>Payment Methods:</strong></label>
+        <input type="radio" id="mpesa" name="payment" value="mpesa">
+        <label for="mpesa">M-Pesa</label>
+        <input type="radio" id="cash" name="payment" value="cash">
+        <label for="cash">Cash</label>
+        <input type="radio" id="visa" name="payment" value="visa">
+        <label for="visa">Visa Card</label>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

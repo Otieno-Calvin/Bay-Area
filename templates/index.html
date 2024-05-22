@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bay Area Delivery System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Bay Area Delivery System</h1>
+        <form action="/submit_order" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="id_no">ID Number:</label>
+                <input type="text" class="form-control" id="id_no" name="id_no" required>
+            </div>
+
+            <div class="form-group">
+                <label for="package_type">Package Type:</label>
+                <select class="form-control" id="package_type" name="package_type" required>
+                    <option value="Fragile">Fragile</option>
+                    <option value="Large">Large</option>
+                    <option value="Small">Small</option>
+                    <option value="LiveGoods">Live Goods</option>
+                    <option value="Animals">Animals</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="payment_method">Payment Method:</label>
+                <select class="form-control" id="payment_method" name="payment_method" required>
+                    <option value="MPESA">MPESA</option>
+                    <option value="CashOnDelivery">Cash on Delivery (for goods below $1200 only)</option>
+                    <option value="DebitCreditCard">Debit/Credit Card</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="transaction_code">Transaction Code:</label>
+                <input type="text" class="form-control" id="transaction_code" name="transaction_code" required>
+            </div>
+
+            <div class="form-group">
+                <label for="delivery_from">Delivery From:</label>
+                <input type="text" class="form-control" id="delivery_from" name="delivery_from" required>
+            </div>
+
+            <div class="form-group">
+                <label for="delivery_to">Delivery To:</label>
+                <input type="text" class="form-control" id="delivery_to" name="delivery_to" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Confirm Order</button>
+        </form>
+    </div>
+</body>
+</html>

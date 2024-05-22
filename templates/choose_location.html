@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <form action="{{ url_for('submit_order') }}" method="post">
+        <h2>KEY IN THE LOCATION</h2>
+
+        <label for="firstDropdown">From:</label>
+        <select id="firstDropdown" name="firstDropdown">
+            <option value="Nairobi">Nairobi</option>
+            <option value="Mombasa">Mombasa</option>
+            <option value="Kisumu">Kisumu</option>
+            <option value="Eldoret">Eldoret</option>
+            <option value="Nakuru">Nakuru</option>
+            <option value="Malindi">Malindi</option>
+            <option value="Kakamega">Kakamega</option>
+            <option value="Thika">Thika</option>
+            <option value="Machakos">Machakos</option>
+            <option value="Kericho">Kericho</option>
+            <option value="Lamu">Lamu</option>
+            <option value="Nyeri">Nyeri</option>
+            <option value="Meru">Meru</option>
+            <option value="Kisii">Kisii</option>
+            <option value="Kitale">Kitale</option>
+            <option value="Naivasha">Naivasha</option>
+            <!-- Add location options -->
+        </select>
+
+        <br>
+
+        <label for="secondDropdown">Destination:</label>
+        <select id="secondDropdown" name="secondDropdown">
+            <option value="Nairobi">Nairobi</option>
+            <option value="Mombasa">Mombasa</option>
+            <option value="Kisumu">Kisumu</option>
+            <option value="Eldoret">Eldoret</option>
+            <option value="Nakuru">Nakuru</option>
+            <option value="Malindi">Malindi</option>
+            <option value="Kakamega">Kakamega</option>
+            <option value="Thika">Thika</option>
+            <option value="Machakos">Machakos</option>
+            <option value="Kericho">Kericho</option>
+            <option value="Lamu">Lamu</option>
+            <option value="Nyeri">Nyeri</option>
+            <option value="Meru">Meru</option>
+            <option value="Kisii">Kisii</option>
+            <option value="Kitale">Kitale</option>
+            <option value="Naivasha">Naivasha</option>
+            <!-- Add location options -->
+        </select>
+
+        <br>
+
+        <button type="submit" id="submit-button">Next</button>
+
+        <script>
+        document.getElementById('submit-button').addEventListener('click', function() {
+            this.disabled = true;
+        });
+        </script>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+</head>
+<body>
+    <h1>Thank You!</h1>
+    <p>Dear {{ name }},</p>
+    <p>Thank you for placing your order. We appreciate your business.</p>
+    <p>Your order is being processed and will be delivered soon.</p>
+    
+    <!-- Include a link to track the order -->
+    <p>Track your order <a href="{{ url_for('track_order', order_id=order_id) }}">here</a>.</p>
+</body>
+</html>
